@@ -74,6 +74,14 @@ header h2{
     /* right: 5%; */
 }
 
+.audio-video {
+    background-color: powderblue;
+}
+
+.video-class {
+    margin-left: 25%;
+}
+
 footer{
     height: 100px;
     bottom: 0;
