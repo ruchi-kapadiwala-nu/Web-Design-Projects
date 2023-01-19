@@ -76,7 +76,7 @@ This example will create a footer that contains a copyright notice "Copyright ©
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-4. Footer -
+5. Section -
 
 The <section> tag in HTML is used to create a semantic container for different sections of content on a web page. It provides a way to group related content together, making it easier for users and search engines to understand the structure of the page.
 
@@ -93,3 +93,32 @@ Example:
 </section>
 
 This example will create a section called "About Us" that contains two paragraphs with text.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+6. Article -
+
+In HTML, the <article> tag represents a self-contained composition in a document, such as a forum post, a magazine or newspaper article, or a blog entry. The content inside the <article> element should make sense on its own and be able to be independently distributed or syndicated. The <article> tag is often used in conjunction with other tags, such as <header>, <footer>, and <section>, to create a complete and structured piece of content.
+
+Example: 
+
+<article>
+  <header>
+    <h1>Article Title</h1>
+    <p>Written by John Doe on January 19, 2023</p>
+  </header>
+  <p>This is the main content of the article. It can include text, images, and other media.</p>
+  <section>
+    <h2>Subsection 1</h2>
+    <p>Additional information related to the main content.</p>
+  </section>
+  <section>
+    <h2>Subsection 2</h2>
+    <p>More additional information related to the main content.</p>
+  </section>
+  <footer>
+    <p>Copyright 2023 by Example.com</p>
+  </footer>
+</article>
+
+In this example, the <article> tag is used to enclose the entire article, which includes a header with a title and author information, the main content, and two sections for additional information, and a footer with the copyright information. The <header> and <footer> tags are used to mark up the header and footer of the article respectively, and the <section> tags are used to group related content within the article.
