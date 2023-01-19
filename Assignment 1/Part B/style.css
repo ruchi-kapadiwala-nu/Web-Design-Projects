@@ -74,12 +74,32 @@ header h2{
     /* right: 5%; */
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 0px rgba(0,0,0,0);
+}
+
 .audio-video {
     background-color: powderblue;
 }
 
 .video-class {
     margin-left: 25%;
+}
+
+.audio-class {
+    /* position: absolute; */
+    top: 75%;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    background-color: powderblue;
+    color: black;
 }
 
 footer{
