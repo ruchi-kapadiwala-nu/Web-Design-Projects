@@ -150,6 +150,25 @@ Here's an example of how to use the <ul> and <li> tags to create an unordered li
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+10. Button -
+
+The <button> tag in HTML is used to create a clickable button on a web page. The text or content between the opening and closing <button> tags will be displayed as the button label. 
+
+Example: <button>Click Me</button>. 
+This will create a button that says "Click Me" on the page.
+
+
+You can also use the type attribute to specify the type of button, such as a "submit" button to submit a form or a "reset" button to clear the form fields. 
+
+Example: <button type="submit">Submit</button>.
+
+
+You can also use the onclick attribute to specify a JavaScript function to be executed when the button is clicked. 
+
+Example: <button onclick="myFunction()">Click Me</button>
+
+---------------------------------------------------------------------------------------------------------------------------------
+
 Points covered in the application:
 
 • Used an external CSS file
@@ -161,6 +180,8 @@ Points covered in the application:
 • Included an image gallery for the skills section
 • Utilized HTML and HTML5 elements throughout the website
 • Made the website responsive (Supports all device widths)
+
+---------------------------------------------------------------------------------------------------------------------------------
 
 Note:
 1. Website not only supports these device widths like IPad(768px) and Smartphones (350 – 365px) but also supports all other device dimensions.
