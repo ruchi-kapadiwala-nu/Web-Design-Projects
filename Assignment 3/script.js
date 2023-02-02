@@ -1,4 +1,4 @@
-// var count = 1;
+var count = 1;
 
 var submitSelectedAwards = document.getElementById("button");
 
@@ -21,7 +21,7 @@ function dropDownTextAreaToggle(){
       }
     }
   }
-  
+
 }
 
 function addNewStudent() {
