@@ -22,14 +22,13 @@
 				<th>TYPE</th>
 				<th>BUDGET<br />#</th>
 				<th>PERCENTAGE</th>
-				<!-- <th active = true>DELETE</th> -->
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr>
 				<td>
-					<input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px" onclick = "onArrowClick(this)"/>
+					<input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px"/>
 				</td>
 				<td>Student 1</td>
 				<td>Teacher 1</td>
@@ -38,7 +37,6 @@
 				<td>TA</td>
 				<td>12345</td>
 				<td>100%</td>
-				<!-- <td></td> -->
 			</tr>
 
 			<tr class="dropDownTextArea"><td colspan="8">
@@ -52,7 +50,7 @@
 			</td></tr>
 
 			<tr>
-				<td><input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px" onclick = "onArrowClick(this)"/></td>
+				<td><input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px"/></td>
 				<td>Student 2</td>
 				<td>Teacher 2</td>
 				<td>Approved</td>
@@ -60,7 +58,6 @@
 				<td>TA</td>
 				<td>23456</td>
 				<td>100%</td>
-				<!-- <td></td> -->
 			</tr>
 
 			<tr class="dropDownTextArea"><td colspan="8">
@@ -74,7 +71,7 @@
 			</td></tr>
 
 			<tr>
-				<td><input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px" onclick = "onArrowClick(this)"/></td>
+				<td><input type="checkbox" onclick = "onCheckboxClick(this)"/><br /><br /><img src="down.png" width="25px"/></td>
 				<td>Student 3</td>
 				<td>Teacher 3</td>
 				<td>Approved</td>
@@ -82,7 +79,6 @@
 				<td>TA</td>
 				<td>34567</td>
 				<td>100%</td>
-				<!-- <td></td> -->
 			</tr>
 
 			<tr class="dropDownTextArea"><td colspan="8">
@@ -94,41 +90,14 @@
 				Comments:<br /><br /><br />
 				Award Status:<br /><br /><br />
 			</td></tr>
-			
 		</tbody>
-		
-		
-		
-		<!-- <tr bgcolor="orange">
-			<td><input type="checkbox" checked/><br /><br /><img src="down.png" width="25px" /></td>
-			<td>Student 2</td>
-			<td>Teacher 2</td>
-			<td>Approved</td>
-			<td>Fall</td>
-			<td>TA</td>
-			<td>23456</td>
-			<td>100%</td>
-			<td><button>Delete</button></td>
-		</tr> -->
-		
-		<!-- <tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
-			<td>Student 3</td>
-			<td>Teacher 3</td>
-			<td>Approved</td>
-			<td>Fall</td>
-			<td>TA</td>
-			<td>34567</td>
-			<td>100%</td>
-			<td></td>
-		</tr> -->
 		
 	</table>
 
 	<br /><br />
 	
-	<button id="button">SUBMIT SELECTED AWARDS</button>
-	<button id = "add" onclick = "addNewRow()">Add New Student</button>
+	<button id = "button">SUBMIT SELECTED AWARDS</button>
+	<button id = "add" onclick = "addNewStudent()">Add New Student</button>
 
 	<nav class="socialmediaicons"></nav>
 	<script src="script.js"></script>

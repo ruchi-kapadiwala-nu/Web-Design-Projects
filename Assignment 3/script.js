@@ -1,28 +1,50 @@
-var count = 1;
+// var count = 1;
 
 var submitSelectedAwards = document.getElementById("button");
 
-// onclick = "onArrowClick(this)"
+function dropDownTextAreaToggle(){
+  var imageTagList = document.getElementsByTagName("img");
 
-function addNewRow() {
+  for (i = 0; i < imageTagList.length; i++) {
+    imageTagList[i].className = "arrow";
+  }
+
+  var arrow = document.getElementsByClassName("arrow");
+
+  for (i = 0; i < arrow.length; i++) {
+    arrow[i].onclick = function () {
+      var dropDownTextArea = this.parentNode.parentNode.nextElementSibling;
+      if (dropDownTextArea.style.display === "none") {
+        dropDownTextArea.style.display = "table-row";
+      } else {
+        dropDownTextArea.style.display = "none";
+      }
+    }
+  }
+  
+}
+
+function addNewStudent() {
+  var rows = document.getElementById("myTable").rows;
+  var latestIndex;
+  if (rows.length > 1) {
+    latestIndex = parseInt(rows[rows.length - 2].firstElementChild.nextElementSibling.innerHTML.split(" ")[1]) + 1;
+  }
+  else {
+    latestIndex = 1;
+  }
+
   var table = document.getElementById("myTable");
-  var tBodyRef = document.getElementsByTagName("tbody")[0];
-
-  var rows = table.rows;
-  var secondLastRow = rows[rows.length - 2];
-  var lastStudent = secondLastRow.innerHTML | "Student 0";
-
-  // var lastStudent = table.lastElementChild.lastElementChild?.firstElementChild?.nextElementSibling?.innerHTML || "Student 0";
-  var latestIndex = lastStudent.split(" ")[1];
+  var tbodyRef = document.getElementsByTagName("tbody")[0];
 
   var tdNode = document.createElement("tr");
 
   var trCheckboxCell = document.createElement("td");
-  trCheckboxCell.innerHTML = ' <input id = "checkbox" type = "checkbox" onclick = "onCheckboxClick(this)" /> <img src="down.png" width="25px"/>';
+  trCheckboxCell.innerHTML = ' <input id = "checkbox" type = "checkbox" onclick = "onCheckboxClick(this)" /><br /><br /> <img src="down.png" width="25px" />';
   var trStudentCell = document.createElement("td");
-  trStudentCell.innerHTML = "Student " + (parseInt(latestIndex) + 1);
+  trStudentCell.innerHTML = "Student " + (parseInt(latestIndex));
   var trTeacherCell = document.createElement("td");
-  trTeacherCell.innerHTML = "Teacher " + (parseInt(latestIndex) + 1);
+  trTeacherCell.innerHTML = "Teacher " + (parseInt(latestIndex));
   var trStatusCell = document.createElement("td");
   trStatusCell.innerHTML = "Approved";
   var trSemCell = document.createElement("td");
@@ -30,7 +52,7 @@ function addNewRow() {
   var trTypeCell = document.createElement("td");
   trTypeCell.innerHTML = "TA";
   var trBudgetCell = document.createElement("td");
-  trBudgetCell.innerHTML = "34567";
+  trBudgetCell.innerHTML = "45678";
   var trPercentCell = document.createElement("td");
   trPercentCell.innerHTML = "100%";
 
@@ -46,7 +68,22 @@ function addNewRow() {
   tdNode.appendChild(trPercentCell);
 
   //appending inside tBody
-  tBodyRef.appendChild(tdNode);
+  tbodyRef.appendChild(tdNode);
+
+  tdNode = document.createElement("tr");
+  tdNode.setAttribute("class", "dropDownTextArea");
+  var trAdvisorDetails = document.createElement("td");
+  trAdvisorDetails.setAttribute("colspan", "8")
+  trAdvisorDetails.innerHTML = 'Advisor:<br /><br />Award Details<br />Summer 1-2014(TA)<br />Budget Number: <br />Tuition Number: <br />Comments:<br /><br /><br />Award Status:<br /><br /><br />'
+
+  tdNode.appendChild(trAdvisorDetails);
+
+  tbodyRef.appendChild(tdNode);
+  count++;
+
+  alert("Record added successfully...!!");
+
+  dropDownTextAreaToggle();
 }
 
 function onCheckboxClick(checkbox) {
@@ -104,11 +141,11 @@ function onCheckboxClick(checkbox) {
     //deleting the 'delete' and 'edit' buttons
     rowSelect.deleteCell(8);
     rowSelect.deleteCell(8);
-    submitFunctionality()
+    submitFunction()
   }
 }
 
-function submitFunctionality() {
+function submitFunction() {
 
   var inputList = document.getElementsByTagName("input");
 
@@ -128,25 +165,25 @@ function submitFunctionality() {
 
   var buttonElement = document.getElementById("button");
 
-  if (enableSubmitButton) {
-    // buttonElement.style.backgroundColor = "orange";
-    // buttonElement.style.border = "2px solid orange";
+  if (!enableSubmitButton) {
+    removeOrNotDeleteEditHeader();
   }
   else {
-    // buttonElement.style.backgroundColor = "grey";
-    // buttonElement.style.border = "2px solid grey";
-    removeOrNotDeleteEditHeader();
+    buttonElement.style.backgroundColor = "orange";
+    buttonElement.style.border = "2px solid orange";
   }
 }
 
 function removeOrNotDeleteEditHeader() {
   var trList = document.getElementsByTagName("tr");
+
   trList[0].removeChild(trList[0].lastElementChild);
   trList[0].removeChild(trList[0].lastElementChild);
 }
 
 function deleteRow(rowObject) {
   var tr = rowObject.parentElement.parentElement; //tr reference
+
   submitSelectedAwards.style.backgroundColor = "grey";
   submitSelectedAwards.style.borderColor = "grey";
 
@@ -154,14 +191,11 @@ function deleteRow(rowObject) {
   document.getElementById("myTable").deleteRow(tr.rowIndex);
 
   count--;
-  alert("Record deleted successfully");
+  alert("Record of student deleted successfully");
+  submitFunction();
 }
 
 function editRow(rowObject) {
-  // var tr = rowObject.parentElement.parentElement; //tr reference
-
-  // document.getElementById("myTable").editRow(tr.rowIndex);
-  // count--;
   prompt("Edit the details");
 }
 
@@ -188,6 +222,8 @@ function onArrowClick(checkbox) {
     rowSelect.deleteCell(8);
   }
 }
+
+dropDownTextAreaToggle();
 
 //Title constructor function that creates a Title object
 function Title(t1) {
