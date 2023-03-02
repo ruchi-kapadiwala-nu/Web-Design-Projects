@@ -4,7 +4,7 @@ window.onload = () => {
     let sec = 0;
     let totalSec = 0;
 
-    let setInterval = null;
+    let setIntervalId = null;
 
     function startStopWatch() {
         ++totalSec;
@@ -21,22 +21,22 @@ window.onload = () => {
         document.getElementById("sec").innerHTML = sec;
     }
 
-    document.getElementById('btnStart').addEventListener('click', () => {
-        setInterval = setInterval(startStopWatch, 1000);
+    document.getElementById('btn-start').addEventListener('click', () => {
+        setIntervalId = setInterval(startStopWatch, 1000);
     })
 
-    document.getElementById('btnStop').addEventListener('click', () => {
-        if (setInterval)
-            clearInterval(setInterval);
+    document.getElementById('btn-stop').addEventListener('click', () => {
+        if (setIntervalId)
+            clearInterval(setIntervalId);
     });
 
 
-    document.getElementById('btnReset').addEventListener('click', () => {
+    document.getElementById('btn-reset').addEventListener('click', () => {
         totalSec = 0;
         document.getElementById("hr").innerHTML = '00:';
         document.getElementById("min").innerHTML = '00:';
         document.getElementById("sec").innerHTML = '00';
-        if (setInterval)
-            clearInterval(setInterval);
+        if (setIntervalId)
+            clearInterval(setIntervalId);
     });
 }
