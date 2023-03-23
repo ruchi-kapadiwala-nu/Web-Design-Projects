@@ -3,7 +3,7 @@ const Sample = require('./models/sample');
 const bcrypt = require('bcrypt');
 
 const fullNameRegEx = /^[a-zA-Z]+$/;
-const emailRegEx = /([\w.]+)@([\w\.]+)\.(\w+)/;
+const emailRegEx = /([\w\.]+)@northeastern.edu/;
 const passwordRegEx = ("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,14})");
 
 module.exports = (app) => {
