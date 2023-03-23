@@ -50,5 +50,3 @@ SASS/SCSS Features: I used several SASS/SCSS features to make my code more organ
   I used mixins to define reusable sets of styles. For example, I defined a mixin for the box-shadow property.
 • Functions: 
   I employed functions to perform calculations and generate dynamic values. For instance, I used a function to calculate the width of the columns in the CSS Grid layout.
-
-
