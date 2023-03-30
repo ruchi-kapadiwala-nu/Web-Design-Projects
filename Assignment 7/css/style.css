@@ -238,9 +238,9 @@ ul li span:hover:after {
 
 .contact-send-btn {
   padding: 10px 15px;
-  background: orange;
+  background: #05386b;
   color: white;
-  border: 2px solid orange;
+  border: 2px solid #05386b;
   letter-spacing: 0.1;
   transition: all 1s;
   border-radius: 10px;
@@ -248,8 +248,8 @@ ul li span:hover:after {
 }
 .contact-send-btn:hover {
   background: white;
-  color: orange;
-  border: 2px solid orange;
+  color: #05386b;
+  border: 2px solid #05386b;
 }
 
 /* Tablets */
