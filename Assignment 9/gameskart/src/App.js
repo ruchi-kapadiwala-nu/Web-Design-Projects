@@ -31,16 +31,20 @@ function App() {
 
   const validateUserExistence = (res) => {
     console.log(document.getElementById("userName").value, document.getElementById("emailId").value)
+    
+    let flag = 0;
+
     for (let i = 0; i < res.length; i++) {
       if (res[i].fullName == document.getElementById("userName").value && res[i].email == document.getElementById("emailId").value) {
         document.getElementById("loginView").style.display = "none";
         document.getElementById("headerView").style.display = "block";
         navigate('/home');
+        flag = 1;
         break;
       }
-      else {
-        alert("User does not exists in the database");
-      }
+    }
+    if(flag == 0) {
+      alert("User does not exists in the database");
     }
   }
 
